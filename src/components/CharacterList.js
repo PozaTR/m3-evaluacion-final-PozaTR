@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import CharacterCard from './CharacterCard';
+import { Link } from 'react-router-dom';
 
 const CharacterList = props => {
     const { characters, findCharacter } = props
@@ -10,7 +11,10 @@ const CharacterList = props => {
             .filter(myCharacter => myCharacter.name.toUpperCase().includes(findCharacter.toUpperCase()))
             .map(character =>
               <li key={character.id} className="main__list__element">
-                <CharacterCard character={character} />
+                <Link to={`/detail/${character.id}`}>
+                  <CharacterCard character={character} />
+                </Link>
+               
               </li>
               )}
           </ul>

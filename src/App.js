@@ -12,7 +12,7 @@ class App extends React.Component {
 
     this.state = {
       characters: [],
-      findCharacter: ''
+      findCharacter: '',
     }
 
     this.getCharacters = this.getCharacters.bind(this);
@@ -21,9 +21,8 @@ class App extends React.Component {
   componentDidMount() {
     fetchCharacters()
     .then(data => {
-      console.log(data.results)
       this.setState({
-        characters: data.results
+        characters: data.results,
       });
     })
   }
@@ -38,7 +37,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { characters, findCharacter } = this.state
+    const { characters, findCharacter} = this.state
     return(
       <div>
         <header className="header">
@@ -53,10 +52,9 @@ class App extends React.Component {
              </React.Fragment>
             )}>
             </Route>
-           <Route path="/detail" render={RouterProps => (
+           <Route path="/detail/:characterId" render={RouterProps => (
               <CharacterDetail match={RouterProps.match} characters={characters} />
             )}>
-             
            </Route>
           </Switch>
         </main>
