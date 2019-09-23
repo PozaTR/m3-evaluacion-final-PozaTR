@@ -17,7 +17,7 @@ const CharacterDetail = props => {
       <div className="detail__container">
         <Link className="detail__link" to="/">Volver</Link>
         <div className="detail__card" >
-            <div className="detail__card__container-image">
+            <div className="detail__card__container-image" style={{backgroundImage: `url(${image})`}}>
               <img className="detail__card__image" src={image} alt={name} />
             </div>
             <div className="detail__card__information" >

@@ -1,13 +1,14 @@
-* {
-    margin: 0 auto;
-    padding: 0;
-    box-sizing: border-box;
+.header {
+  padding: 24px;
 }
-  
-body {
-    font-family: 'Roboto Slab', serif;
-    background-color: black;
-    color: white;
-    text-align: center;
+
+.header__title {
+  height: 1px;
+  overflow: hidden;
+}
+
+.header__logo {
+  max-width:70vw;
+  width: 400px;
 }
 

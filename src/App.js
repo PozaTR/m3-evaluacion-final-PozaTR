@@ -1,7 +1,10 @@
 import React from 'react';
-import './App.scss';
-import { fetchCharacters } from './services/fetchCharacters';
 import { Route, Switch } from 'react-router-dom';
+import logo from './images/Rick_and_Morty_-_logo.png';
+import './App.scss';
+
+import { fetchCharacters } from './services/fetchCharacters';
+
 import Filters from './components/Filters';
 import CharacterList from './components/CharacterList';
 import CharacterDetail from './components/CharacterDetail';
@@ -41,7 +44,8 @@ class App extends React.Component {
     return(
       <div>
         <header className="header">
-          <h1 className="header__title">Ricky and Morty</h1>
+          <h1 className="header__title">Rick and Morty</h1>
+          <img className="header__logo" src={logo} alt="logo Rick and Morty" />
         </header>
         <main className="main">
           <Switch>
