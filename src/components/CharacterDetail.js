@@ -20,8 +20,8 @@ const CharacterDetail = props => {
             <div className="detail__card__container-image">
               <img className="detail__card__image" src={image} alt={name} />
             </div>
-            <div>
-              <h2>{name}</h2>
+            <div className="detail__card__information" >
+              <h2 className="detail__card__information__name" >{name}</h2>
               <p className="detail__card__information__status" >{`status: ${status}`}</p>
               <p className="detail__card__information__species" >{`species:${species}`}</p>
               <p className="detail__card__information__origin" >{`origin:${origin.name}`}</p>

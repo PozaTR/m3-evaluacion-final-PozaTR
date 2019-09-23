@@ -12,7 +12,7 @@ const CharacterList = props => {
             .filter(myCharacter => myCharacter.name.toUpperCase().includes(findCharacter.toUpperCase()))
             .map(character =>
               <li key={character.id} className="main__list__element">
-                <Link to={`/detail/${character.id}`}>
+                <Link className="main__link" to={`/detail/${character.id}`}>
                   <CharacterCard character={character} />
                 </Link>
                
