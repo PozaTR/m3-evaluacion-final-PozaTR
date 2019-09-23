@@ -15,19 +15,19 @@ const CharacterDetail = props => {
     const { name, image, species, origin, episode, status} = characterFind[0];
     return(
       <div className="detail__container">
+        <Link className="detail__link" to="/">Volver</Link>
         <div className="detail__card" >
-          <div className="detail__card__container-image" >
-            <img calssName="detail__card__image" src={image} alt={name} />
-          </div>
-          <div className="detail__card__information" >
-            <h2 className="detail__card__information__name" >{name}</h2>
-            <p className="detail__card__information__species" >{`species:${species}`}</p>
-            <p className="detail__card__information__origin" >{`origin:${origin.name}`}</p>
-            <p className="detail__card__information__episodes" >{`episodes:${episode.length}`}</p>
-            <p className="detail__card__information__status" >{`status: ${status}`}</p>
+            <div className="detail__card__container-image">
+              <img className="detail__card__image" src={image} alt={name} />
+            </div>
+            <div>
+              <h2>{name}</h2>
+              <p className="detail__card__information__status" >{`status: ${status}`}</p>
+              <p className="detail__card__information__species" >{`species:${species}`}</p>
+              <p className="detail__card__information__origin" >{`origin:${origin.name}`}</p>
+              <p className="detail__card__information__episodes" >{`episodes:${episode.length}`}</p>
           </div>
         </div>
-        <Link to="/">Back</Link>
       </div>
      
     )
