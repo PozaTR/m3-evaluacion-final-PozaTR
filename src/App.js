@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import { fetchCharacters } from './services/fetchCharacters';
+import Filters from './components/Filters';
 import CharacterList from './components/CharacterList';
 
 class App extends React.Component {
@@ -8,8 +9,11 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      characters: []
+      characters: [],
+      findCharacter: ''
     }
+
+    this.getCharacters = this.getCharacters.bind(this);
   }
 
   componentDidMount() {
@@ -20,17 +24,29 @@ class App extends React.Component {
         characters: data.results
       });
     })
-    }
+  }
+
+  getCharacters(event) {
+    const findCharacter = event.currentTarget.value;
+    console.log(findCharacter);
+
+    this.setState({
+      findCharacter: findCharacter
+    })
+  }
 
   render() {
-    const { characters } = this.state
+    const { characters, findCharacter } = this.state
     return(
       <div>
         <header className="header">
           <h1 className="header__title">Ricky and Morty</h1>
         </header>
         <main className="main">
-          <CharacterList characters={characters} />
+          <React.Fragment>
+            <Filters getCharacters={this.getCharacters} findCharacter={findCharacter} />
+            <CharacterList characters={characters} findCharacter={findCharacter}/>
+          </React.Fragment>
         </main>
       </div>
     )

@@ -3,10 +3,12 @@ import PropTypes from 'prop-types';
 import CharacterCard from './CharacterCard';
 
 const CharacterList = props => {
-    const { characters } = props
+    const { characters, findCharacter } = props
     return(
         <ul className="main__list">
-            {characters.map(character =>
+            {characters
+            .filter(myCharacter => myCharacter.name.toUpperCase().includes(findCharacter.toUpperCase()))
+            .map(character =>
               <li key={character.id} className="main__list__element">
                 <CharacterCard character={character} />
               </li>

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const CharacterCard = props => {
     const { character } = props
@@ -11,6 +12,10 @@ const CharacterCard = props => {
         <p className="main__list__element__species">{character.species}</p>
       </div> 
     )
+}
+
+CharacterCard.propTypes = {
+  character: PropTypes.object.isRequired
 }
 
 export default CharacterCard;
