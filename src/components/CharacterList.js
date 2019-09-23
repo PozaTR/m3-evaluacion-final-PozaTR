@@ -5,25 +5,26 @@ import CharacterCard from './CharacterCard';
 import { Link } from 'react-router-dom';
 
 const CharacterList = props => {
-    const { characters, findCharacter } = props
-    return(
-        <ul className="main__list">
-            {characters
-            .filter(myCharacter => myCharacter.name.toUpperCase().includes(findCharacter.toUpperCase()))
-            .map(character =>
-              <li key={character.id} className="main__list__element">
-                <Link className="main__link" to={`/detail/${character.id}`}>
-                  <CharacterCard character={character} />
-                </Link>
-               
-              </li>
-              )}
-          </ul>
-    )
+  const { characters, findCharacter } = props
+  return (
+    <ol className="main__list">
+      {characters
+        .filter(myCharacter => myCharacter.name.toUpperCase().includes(findCharacter.toUpperCase()))
+        .map(character =>
+          <li key={character.id} className="main__list__element">
+            <Link className="main__link" to={`/detail/${character.id}`}>
+              <CharacterCard character={character} />
+            </Link>
+
+          </li>
+        )}
+    </ol>
+  )
 }
 
 CharacterList.propTypes = {
-    characters: PropTypes.arrayOf(PropTypes.object).isRequired,
-  };
+  characters: PropTypes.arrayOf(PropTypes.object).isRequired,
+  findCharacter: PropTypes.string.isRequired
+};
 
 export default CharacterList;

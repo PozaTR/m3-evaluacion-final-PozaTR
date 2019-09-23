@@ -1,14 +1,16 @@
 .header {
   padding: 24px;
+
+  &__title {
+    height: 1px;
+    overflow: hidden;
+  }
+  
+  &__logo {
+    max-width:70vw;
+    width: 400px;
+  }
 }
 
-.header__title {
-  height: 1px;
-  overflow: hidden;
-}
 
-.header__logo {
-  max-width:70vw;
-  width: 400px;
-}
 
