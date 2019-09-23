@@ -7,7 +7,7 @@ const Filters = props => {
   const { getCharacters, findCharacter } = props
   return(
     <div className="filters__container" >
-      <label className="filters__label" htmlFor="name" >Elige tu personaje</label>
+      <label className="filters__label" htmlFor="name" ></label>
       <input className="filters__input" id="name" name="name" type="text" value={findCharacter} onChange={getCharacters} ></input>
     </div>
   )
