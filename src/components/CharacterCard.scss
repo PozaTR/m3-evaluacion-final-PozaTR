@@ -1,0 +1,40 @@
+.card {
+  display:flex;
+  flex-direction: column-reverse;
+
+  &__information {
+      background-color: #51D1E1;
+      min-width: 100%;
+      padding: 8px;
+      text-align:left;
+
+    &__name {
+      font-size: 16px;
+    }
+  }
+
+  &__container-image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 150px;
+    width:150px;
+
+    @media all and (min-width: 768px) {
+      height: 200px;
+      width:200px;
+    }
+
+    @media all and (min-width: 1024px) {
+      height: 250px;
+      width:250px;
+    }
+  }
+
+  &__image {
+    height: 1px;
+    width:1px
+  }
+  
+
+}

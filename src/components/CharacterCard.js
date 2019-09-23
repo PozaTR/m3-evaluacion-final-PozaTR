@@ -5,12 +5,14 @@ import PropTypes from 'prop-types';
 const CharacterCard = props => {
     const { character } = props
     return(
-      <div className="main__card__container">
-        <h2 className="main__card__element__name">{character.name}</h2>
-        <div className="main__card__element__image-container">
-            <img className="main__card__element__image" src={character.image} alt={character.name}/>
+      <div className="card">
+        <div className="card__information" >
+          <h2 className="card__information__name">{character.name}</h2>
+          <p className="card__information__species">{character.species}</p>
         </div>
-        <p className="main__card__element__species">{character.species}</p>
+        <div className="card__container-image" style={{backgroundImage: `url(${character.image})`}}>
+            <img className="card__image" src={character.image} alt={character.name}/>
+        </div>
       </div> 
     )
 }
