@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import { fetchCharacters } from './services/fetchCharacters';
 import { Route, Switch } from 'react-router-dom';
 import Filters from './components/Filters';

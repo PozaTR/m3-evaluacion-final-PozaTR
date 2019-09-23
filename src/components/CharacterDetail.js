@@ -1,5 +1,7 @@
 import React from 'react';
+import './CharacterDetail.scss'
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const CharacterDetail = props => {
   const { characters, match } = props;
@@ -13,21 +15,25 @@ const CharacterDetail = props => {
     const { name, image, species, origin, episode, status} = characterFind[0];
     return(
       <div className="detail__container">
-        <div>
-          <img src={image} alt={name} />
+        <div className="detail__card" >
+          <div className="detail__card__container-image" >
+            <img calssName="detail__card__image" src={image} alt={name} />
+          </div>
+          <div className="detail__card__information" >
+            <h2 className="detail__card__information__name" >{name}</h2>
+            <p className="detail__card__information__species" >{`species:${species}`}</p>
+            <p className="detail__card__information__origin" >{`origin:${origin.name}`}</p>
+            <p className="detail__card__information__episodes" >{`episodes:${episode.length}`}</p>
+            <p className="detail__card__information__status" >{`status: ${status}`}</p>
+          </div>
         </div>
-        <div>
-          <h3>{name}</h3>
-          <p>{`species:${species}`}</p>
-          <p>{`origin:${origin.name}`}</p>
-          <p>{`episodes:${episode.length}`}</p>
-          <p>{`status: ${status}`}</p>
-        </div>
+        <Link to="/">Back</Link>
       </div>
+     
     )
   } else {
     return(
-      <div>Vuelve a tu casa</div>
+      <div>Ese personaje no existe</div>
     )
   }
 }
