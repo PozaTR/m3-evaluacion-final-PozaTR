@@ -2,7 +2,6 @@ import React from 'react';
 import './Filters.scss';
 import PropTypes from 'prop-types';
 
-
 const Filters = props => {
   const { getCharacters, findCharacter } = props
   return(

@@ -15,7 +15,6 @@ const CharacterList = props => {
             <Link className="main__link" to={`/detail/${character.id}`}>
               <CharacterCard character={character} />
             </Link>
-
           </li>
         )}
     </ol>

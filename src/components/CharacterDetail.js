@@ -19,14 +19,13 @@ const CharacterDetail = props => {
           </div>
           <div className="detail__card__information" >
             <h2 className="detail__card__information__name" >{name}</h2>
-            <p className="detail__card__information__status" >{`status: ${status}`} {(status === 'Dead') ? <i class="fas fa-skull-crossbones"></i> : ''}</p>
-            <p className="detail__card__information__species" >{`species:${species}`}</p>
+            <p className="detail__card__information__status" >{`status: ${status}`} {(status === 'Dead') ? <i className="fas fa-skull-crossbones"></i> : ''}</p>
+            <p className="detail__card__information__species" >{`species:${species}`} {(species === 'Alien') ? <i className="fab fa-reddit-alien"></i> : <i className="fas fa-user"></i>}</p>
             <p className="detail__card__information__origin" >{`origin:${origin.name}`}</p>
             <p className="detail__card__information__episodes" >{`episodes:${episode.length}`}</p>
           </div>
         </div>
       </div>
-
     )
   } else {
     return (
