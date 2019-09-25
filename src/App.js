@@ -14,9 +14,11 @@ class App extends React.Component {
     this.state = {
       characters: [],
       findCharacter: '',
+      gender: 'All'
     }
 
     this.getCharacters = this.getCharacters.bind(this);
+    this.getByGender = this.getByGender.bind(this);
   }
 
   componentDidMount() {
@@ -28,6 +30,14 @@ class App extends React.Component {
       })
   }
 
+  getByGender(event) {
+    const newGender = event.currentTarget.value;
+
+    this.setState({
+      gender: newGender
+    })
+  }
+
   getCharacters(event) {
     const findCharacter = event.currentTarget.value;
 
@@ -37,7 +47,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { characters, findCharacter } = this.state
+    const { characters, findCharacter, gender } = this.state
     return (
       <div>
         <header className="header">
@@ -48,8 +58,8 @@ class App extends React.Component {
           <Switch>
             <Route exact path="/" render={RouterProps => (
               <React.Fragment>
-                <Filters match={RouterProps.match} getCharacters={this.getCharacters} findCharacter={findCharacter} />
-                <CharacterList match={RouterProps.match} characters={characters} findCharacter={findCharacter} />
+                <Filters match={RouterProps.match} getCharacters={this.getCharacters} findCharacter={findCharacter} getByGender={this.getByGender} />
+                <CharacterList match={RouterProps.match} characters={characters} findCharacter={findCharacter} gender={gender} />
               </React.Fragment>
             )}>
             </Route>

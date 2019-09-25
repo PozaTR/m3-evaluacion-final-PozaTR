@@ -5,11 +5,12 @@ import CharacterCard from './CharacterCard';
 import { Link } from 'react-router-dom';
 
 const CharacterList = props => {
-  const { characters, findCharacter } = props
+  const { characters, findCharacter, gender } = props
   return (
     <ol className="main__list">
       {characters
         .filter(myCharacter => myCharacter.name.toUpperCase().includes(findCharacter.toUpperCase()))
+        .filter(character => gender === 'All' || character.gender === gender)
         .map(character =>
           <li key={character.id} className="main__list__element">
             <Link className="main__link" to={`/detail/${character.id}`}>
